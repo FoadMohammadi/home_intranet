@@ -13,16 +13,21 @@ what you want to eat during the week. The app then generates a shopping list bas
 You can add or remove stuff from the shopping list.
 
 ## How to use it?
-After getting the repo, and making sure you have installed the requirements, run:
+Install Flask and Flask-sqlalchemy:
+```
+pip install Flask
+pip install flask-sqlalchemy
+```
+Get the repo and run:
 ```
 python home_intranet.py
 ```
-On the same device, you will be able to access the app by opennig the browser and heading to http://127.0.0.1:5000/.
+On the same device, you will be able to access the app by opening the browser and heading to http://127.0.0.1:5000/.
 The web server is accessible to any device on the same network, including other computers, tablets, and smartphones on:
 ```
-http://<your.ip.adress>:5000/
+http://<your.ip.address>:5000/
 ```
-where `<your.ip.adress>` is the IP adress of the device running the app. So it will be something like:
+where `<your.ip.address>` is the IP address of the device running the app. So it will be something like:
 ```
 http://192.168.1.3:5000/
 ```
