@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Food Manager | Shopping List</title>
+		<link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename = 'main.css') }}">
+		<link href='https://fonts.googleapis.com/css?family=Lato:400,100,300' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		<header class="primary-header container group">
+			<h1 class="logo">
+				<a href="http://localhost:5000/">Home <br> Intranet</a>
+			</h1>
+			<h3 class="date">{{ date }} , {{ weekday }}</h3>
+			<nav class="nav primary-nav">
+				<ul>
+					<li><a href="http://localhost:5000/">Home</a></li><!--
+					--><li><a href="http://localhost:5000/food_manager">Food Manager</a></li>
+				</ul>
+			</nav>
+		</header>
+		<section class="row-alt">
+			<div class="lead container">
+				<h1>Shopping List</h1>
+				<p>Here is the food plan and a shopping list according to your choice. You can edit the shopping list in case you have some of the items already or if you want to add extra things!</p>
+			</div>
+		</section>
+		<section class="row">
+			<div class="grid">
+				<section class="col-1-2">
+					<h2>Food plan for the week to come:</h2>
+					<table border=1>
+						{% for key, value in plan.iteritems() %}
+							{% if key != 'submit' %}
+								<tr>
+									<th> {{ key }} </th>
+					        		<td> {{ value}} </td>
+					    		</tr>
+					    	{% endif %}
+					    {% endfor %}
+					</table>
+				</section>
+				<section class="col-1-2">
+					<h2>Shopping list:</h2>
+					<form class="register-group shopping-list" action="#" method="post">
+					<textarea name="list">{% for item in shopping_items %}- {{ item }}
+{% endfor %}</textarea>
+					</form>
+				</section>
+			</div>
+		</section>
+		<footer class="primary-footer container group">
+			<small>Open Home Intranet</small>
+			<nav class="nav">
+				<ul>
+					<li><a href="http://localhost:5000/">Home</a></li><!--
+					--><li><a href="http://localhost:5000/food_manager">Food Manager</a></li>
+			</nav>
+		</footer>
+	</body>
+</html>

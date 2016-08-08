@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Home Intranet</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename = 'main.css') }}">
+		<link href='https://fonts.googleapis.com/css?family=Lato:400,100,300' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		<header class="primary-header container group">
+				<h1 class="logo">
+					<a href="http://localhost:5000/">Home <br> Intranet</a>
+				</h1>
+			<h3 class="date">{{ date }} , {{ weekday }}</h3>
+			<nav class="nav primary-nav">
+				<ul>
+					<li><a href="http://localhost:5000/">Home</a></li><!--
+					--><li><a href="http://localhost:5000/food_manager">Food Manager</a></li>
+				</ul>
+			</nav>
+		</header>
+		<section class="hero container">
+			<h2>Welcome to home intranet</h2>
+			<p>Here you can create a food plan, make automatic shopping lists, and share general info about your home with others on your home network.</p>
+			<a href="http://localhost:5000/food_manager" class="btn btn-alt">Create food plan</a>
+		</section>
+		<section class="row">
+			<div class="grid">
+			<!-- Food Manager -->
+			<section class="teaser">
+				<a href="http://localhost:5000/food_manager">
+					<img src="{{ url_for('static', filename = 'images/food_manager_small.jpg') }}" alt="Food Manager" align="middle">
+					<h3>Easy Food Planning</h3>
+					<h5>Food Manager</h5>
+				</a>
+				<p>Using this tool, you can create a weekly food plan from the recipes on the database. A shopping list is automatically created based on the recipes selected in the plan. You can edit the shopping list to remove items you already have at home, or add extra items.</p>
+			</section>
+			</div>
+		</section>
+		<footer class="primary-footer container group">
+			<small>Open Home Intranet</small>
+			<nav class="nav">
+				<ul>
+					<li><a href="http://localhost:5000/">Home</a></li><!--
+					--><li><a href="http://localhost:5000/food_manager">Food Manager</a></li>
+			</nav>
+		</footer>
+	</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Food Manager</title>
+		<link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename = 'main.css') }}">
+		<link href='https://fonts.googleapis.com/css?family=Lato:400,100,300' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		<header class="primary-header container group">
+			<h1 class="logo">
+				<a href="http://localhost:5000/">Home <br> Intranet</a>
+			</h1>
+			<h3 class="date">{{ date }} , {{ weekday }}</h3>
+			<nav class="nav primary-nav">
+				<ul>
+					<li><a href="http://localhost:5000/">Home</a></li><!--
+					--><li><a href="http://localhost:5000/food_manager">Food Manager</a></li>
+			</nav>
+		</header>
+		<section class="row-alt">
+			<div class="lead container">
+				<h1>Food Manager</h1>
+				<p>Select a recipe for each day of the week. When you are done, click on "Create Shopping List". In the next section you will get a shopping list that you can edit.</p>
+			</div>
+		</section>
+		<section class="row">
+			<div class="container">
+					<h2>Food plan for the week to come:</h2>
+					<form class="col-1-2" action="http://localhost:5000/shopping_list" method="post">
+						<fieldset class="register-group">
+							<label>
+								Day 1
+								<select name="Day 1">
+								{% for recipe in recipes %}
+									<option value="{{ recipe.name }}">{{ recipe.name }}</option>
+								{% endfor %}
+								</select>
+							</label>
+							<label>
+								Day 2
+								<select name="Day 2">
+								{% for recipe in recipes %}
+									<option value="{{ recipe.name }}">{{ recipe.name }}</option>
+								{% endfor %}
+								</select>
+							</label>
+							<label>
+								Day 3
+								<select name="Day 3">
+								{% for recipe in recipes %}
+									<option value="{{ recipe.name }}">{{ recipe.name }}</option>
+								{% endfor %}
+								</select>
+							</label>
+							<label>
+								Day 4
+								<select name="Day 4">
+								{% for recipe in recipes %}
+									<option value="{{ recipe.name }}">{{ recipe.name }}</option>
+								{% endfor %}
+								</select>
+							</label>
+							<label>
+								Day 5
+								<select name="Day 5">
+								{% for recipe in recipes %}
+									<option value="{{ recipe.name }}">{{ recipe.name }}</option>
+								{% endfor %}
+								</select>
+							</label>
+							<label>
+								Day 6
+								<select name="Day 6">
+								{% for recipe in recipes %}
+									<option value="{{ recipe.name }}">{{ recipe.name }}</option>
+								{% endfor %}
+								</select>
+							</label>
+							<label>
+								Day 7
+								<select name="Day 7">
+								{% for recipe in recipes %}
+									<option value="{{ recipe.name }}">{{ recipe.name }}</option>
+								{% endfor %}
+								</select>
+							</label>
+						</fieldset>
+						<input class="btn btn-default" type="submit" name="submit" value="Create Shopping List">
+					</form>
+					<a href="http://localhost:5000/food_manager/add_recipe">Add a new recipe</a>
+			</div>
+		</section>
+		<footer class="primary-footer container group">
+			<small>Open Home Intranet</small>
+			<nav class="nav">
+				<ul>
+					<li><a href="http://localhost:5000/">Home</a></li><!--
+					--><li><a href="http://localhost:5000/food_manager">Food Manager</a></li>
+				</ul>
+			</nav>
+		</footer>
+	</body>
+</html>

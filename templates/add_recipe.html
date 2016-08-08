@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Food Manager</title>
+		<link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename = 'main.css') }}">
+		<link href='https://fonts.googleapis.com/css?family=Lato:400,100,300' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		<header class="primary-header container group">
+			<h1 class="logo">
+				<a href="http://localhost:5000/">Home <br> Intranet</a>
+			</h1>
+			<h3 class="date">{{ date }} , {{ weekday }}</h3>
+			<nav class="nav primary-nav">
+				<ul>
+					<li><a href="http://localhost:5000/">Home</a></li><!--
+					--><li><a href="http://localhost:5000/food_manager">Food Manager</a></li>
+			</nav>
+		</header>
+		<section class="row-alt">
+			<div class="lead container">
+				<h1>Food Manager</h1>
+				<p>Add a new recipe to the database.</p>
+			</div>
+		</section>
+		<section class="row">
+			<div class="container">
+					<form class="col-1-2" action="http://localhost:5000/food_manager/recipe_added" method="post">
+						<fieldset class="register-group">
+						<label>
+							Name
+							<input type="text" name="name" placeholder="Name of the recipe" required>
+						</label>
+						<label>
+							Ingredients
+							<textarea name="ingredients" placeholder="ingredient 1, ingredient 2, ..." required></textarea>
+						</label>
+						<label>
+							Instructions
+							<textarea name="instructions" placeholder="How to make it?" required></textarea>
+						</label>
+					</fieldset>
+					<input class="btn btn-default" type="submit" name="submit" value="Add to database">
+					</form>
+			</div>
+		</section>
+		<footer class="primary-footer container group">
+			<small>Open Home Intranet</small>
+			<nav class="nav">
+				<ul>
+					<li><a href="http://localhost:5000/">Home</a></li><!--
+					--><li><a href="http://localhost:5000/food_manager">Food Manager</a></li>
+				</ul>
+			</nav>
+		</footer>
+	</body>
+</html>
