@@ -5,10 +5,6 @@ import collections
 
 app = Flask(__name__)
 
-# remove before deploy
-# This option removes the static file caching
-app.config.update(SEND_FILE_MAX_AGE_DEFAULT = 0)
-# ------------
 
 # Set up database connection
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///recipes.sqlite3'
@@ -98,4 +94,4 @@ def login():
 
 if __name__ == '__main__':
 	db.create_all()
-	app.run(debug = True)
+	app.run(host='0.0.0.0')
