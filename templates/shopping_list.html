@@ -3,7 +3,7 @@
 		<section class="row-alt">
 			<div class="lead container">
 				<h1>Shopping List</h1>
-				<p>Here is the food plan and a shopping list according to your choice. You can edit the shopping list in case you have some of the items already or if you want to add extra things!</p>
+				<p>Here is the food plan and a shopping list according to your choice. You can edit the shopping list in case you have some of the items already or if you want to add extra things. Press "Done" to get a print-friendly version of your plan and shopping list.</p>
 			</div>
 		</section>
 		<section class="row">
@@ -23,9 +23,11 @@
 				</section>
 				<section class="col-1-2">
 					<h2>Shopping list:</h2>
-					<form class="register-group shopping-list" action="#" method="post">
+					<form class="register-group shopping-list" action="/food_manager/shopping_list/print" method="post">
 					<textarea name="list">{% for item in shopping_items %}- {{ item }}
 {% endfor %}</textarea>
+					<input class="btn btn-default" type="submit" name="submit" value="Done!">
+					<input type="hidden" name="plan" value="{{ plan }}">
 					</form>
 				</section>
 			</div>

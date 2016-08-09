@@ -1,9 +1,10 @@
-from flask import Flask, redirect, url_for, request, render_template
+from flask import Flask, session, redirect, url_for, request, render_template
 from flask_sqlalchemy import SQLAlchemy
 import time
 import collections
 
 app = Flask(__name__)
+app.secret_key = 'k#asdk#)!-1'
 
 
 # Set up database connection
@@ -21,6 +22,7 @@ class recipes(db.Model):
 		self.name = name
 		self.ingredients = ingredients
 		self.instructions = instructions
+
 
 # functions to supply date and weekday to views
 def get_date():
@@ -62,7 +64,7 @@ def recipe_added():
 
 
 @app.route('/shopping_list',methods = ['POST', 'GET'])
-def login():
+def shopping_list():
     if request.method == 'POST':
         plan = collections.OrderedDict(sorted(request.form.items()))
         del plan['submit']
@@ -86,12 +88,28 @@ def login():
     		if item not in shopping_items:
     			shopping_items.append(item)
 
-
+    session['plan'] = plan
     return render_template('shopping_list.html', 
         	date = get_date(), weekday = get_weekday(), plan = plan, 
         	shopping_items = shopping_items)
 
+@app.route('/food_manager/shopping_list/print', methods = ['POST', 'GET'])
+def print_list():
+    if request.method == 'POST':
+        clean_list = []
+        edited_list = request.form['list']
+        preped_list = edited_list.split('-')
+        for item in preped_list:
+            clean_list.append(item)
+
+        session_plan = session['plan']
+
+        return render_template('print.html',
+            date = get_date(), weekday = get_weekday(),
+            plan = collections.OrderedDict(sorted(session_plan.items())), 
+            final_list = clean_list)
+
 
 if __name__ == '__main__':
-	db.create_all()
-	app.run(host='0.0.0.0')
+    db.create_all()
+    app.run(host='0.0.0.0')

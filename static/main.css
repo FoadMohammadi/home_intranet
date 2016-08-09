@@ -463,8 +463,25 @@ textarea {
   padding-left: 10px;
 }
 
+.final-list li {
+  display: block;
+  width: 33%;
+  float: left;
+  margin-bottom: 10px;
+}
+
+hr {
+  margin-top: 80px;
+  margin-bottom: 50px;
+}
+
+
 @media print{
-  body{ background-color:#FFFFFF; background-image:none; color:#000000 }
+  body{ 
+    background-color:#FFFFFF; 
+    background-image:none; 
+    color:#000000 
+  }
   #ad{ display:none;}
   #leftbar{ display:none;}
   #header{ display: none; }
@@ -477,5 +494,6 @@ textarea {
   .primary-footer {
     display: none;
   }
+
   #contentarea{ width:100%;}
 }
