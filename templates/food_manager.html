@@ -1,23 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>Food Manager</title>
-		<link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename = 'main.css') }}">
-		<link href='https://fonts.googleapis.com/css?family=Lato:400,100,300' rel='stylesheet' type='text/css'>
-	</head>
-	<body>
-		<header class="primary-header container group">
-			<h1 class="logo">
-				<a href="/">Home <br> Intranet</a>
-			</h1>
-			<h3 class="date">{{ date }} , {{ weekday }}</h3>
-			<nav class="nav primary-nav">
-				<ul>
-					<li><a href="/">Home</a></li><!--
-					--><li><a href="/food_manager">Food Manager</a></li>
-			</nav>
-		</header>
+{% extends "base.html" %}
+{% block content %}
 		<section class="row-alt">
 			<div class="lead container">
 				<h1>Food Manager</h1>
@@ -88,17 +70,7 @@
 						</fieldset>
 						<input class="btn btn-default" type="submit" name="submit" value="Create Shopping List">
 					</form>
-					<a href="/add_recipe">Add a new recipe</a>
+					<a href="food_manager/add_recipe">Add a new recipe</a>
 			</div>
 		</section>
-		<footer class="primary-footer container group">
-			<small>Open Home Intranet</small>
-			<nav class="nav">
-				<ul>
-					<li><a href="/">Home</a></li><!--
-					--><li><a href="/food_manager">Food Manager</a></li>
-				</ul>
-			</nav>
-		</footer>
-	</body>
-</html>
+{% endblock %}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Home Intranet</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename = 'main.css') }}">
+		<link href='https://fonts.googleapis.com/css?family=Lato:400,100,300' rel='stylesheet' type='text/css'>
+	</head>
+	<body>
+		<header class="primary-header container group">
+				<h1 class="logo">
+					<a href="/">Home <br> Intranet</a>
+				</h1>
+			<h3 class="date">{{ date }} , {{ weekday }}</h3>
+			<nav class="nav primary-nav">
+				<ul>
+					<li><a href="/">Home</a></li><!--
+					--><li><a href="/food_manager">Food Manager</a></li>
+				</ul>
+			</nav>
+		</header>
+		{% block content %}{% endblock %}
+		<footer class="primary-footer container group">
+			<small>Open Home Intranet</small>
+			<nav class="nav">
+				<ul>
+					<li><a href="/">Home</a></li><!--
+					--><li><a href="/food_manager">Food Manager</a></li>
+			</nav>
+		</footer>
+	</body>
+</html>
