@@ -9,13 +9,13 @@
 	<body>
 		<header class="primary-header container group">
 			<h1 class="logo">
-				<a href="http://localhost:5000/">Home <br> Intranet</a>
+				<a href="/">Home <br> Intranet</a>
 			</h1>
 			<h3 class="date">{{ date }} , {{ weekday }}</h3>
 			<nav class="nav primary-nav">
 				<ul>
-					<li><a href="http://localhost:5000/">Home</a></li><!--
-					--><li><a href="http://localhost:5000/food_manager">Food Manager</a></li>
+					<li><a href="/">Home</a></li><!--
+					--><li><a href="/food_manager">Food Manager</a></li>
 			</nav>
 		</header>
 		<section class="row-alt">
@@ -27,7 +27,7 @@
 		<section class="row">
 			<div class="container">
 					<h2>Food plan for the week to come:</h2>
-					<form class="col-1-2" action="http://localhost:5000/shopping_list" method="post">
+					<form class="col-1-2" action="/shopping_list" method="post">
 						<fieldset class="register-group">
 							<label>
 								Day 1
@@ -88,15 +88,15 @@
 						</fieldset>
 						<input class="btn btn-default" type="submit" name="submit" value="Create Shopping List">
 					</form>
-					<a href="http://localhost:5000/food_manager/add_recipe">Add a new recipe</a>
+					<a href="/add_recipe">Add a new recipe</a>
 			</div>
 		</section>
 		<footer class="primary-footer container group">
 			<small>Open Home Intranet</small>
 			<nav class="nav">
 				<ul>
-					<li><a href="http://localhost:5000/">Home</a></li><!--
-					--><li><a href="http://localhost:5000/food_manager">Food Manager</a></li>
+					<li><a href="/">Home</a></li><!--
+					--><li><a href="/food_manager">Food Manager</a></li>
 				</ul>
 			</nav>
 		</footer>

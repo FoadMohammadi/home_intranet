@@ -9,26 +9,26 @@
 	<body>
 		<header class="primary-header container group">
 				<h1 class="logo">
-					<a href="http://localhost:5000/">Home <br> Intranet</a>
+					<a href="/">Home <br> Intranet</a>
 				</h1>
 			<h3 class="date">{{ date }} , {{ weekday }}</h3>
 			<nav class="nav primary-nav">
 				<ul>
-					<li><a href="http://localhost:5000/">Home</a></li><!--
-					--><li><a href="http://localhost:5000/food_manager">Food Manager</a></li>
+					<li><a href="/">Home</a></li><!--
+					--><li><a href="/food_manager">Food Manager</a></li>
 				</ul>
 			</nav>
 		</header>
 		<section class="hero container">
 			<h2>Welcome to home intranet</h2>
 			<p>Here you can create a food plan, make automatic shopping lists, and share general info about your home with others on your home network.</p>
-			<a href="http://localhost:5000/food_manager" class="btn btn-alt">Create food plan</a>
+			<a href="/food_manager" class="btn btn-alt">Create food plan</a>
 		</section>
 		<section class="row">
 			<div class="grid">
 			<!-- Food Manager -->
 			<section class="teaser">
-				<a href="http://localhost:5000/food_manager">
+				<a href="/food_manager">
 					<img src="{{ url_for('static', filename = 'images/food_manager_small.jpg') }}" alt="Food Manager" align="middle">
 					<h3>Easy Food Planning</h3>
 					<h5>Food Manager</h5>
@@ -41,8 +41,8 @@
 			<small>Open Home Intranet</small>
 			<nav class="nav">
 				<ul>
-					<li><a href="http://localhost:5000/">Home</a></li><!--
-					--><li><a href="http://localhost:5000/food_manager">Food Manager</a></li>
+					<li><a href="/">Home</a></li><!--
+					--><li><a href="/food_manager">Food Manager</a></li>
 			</nav>
 		</footer>
 	</body>
